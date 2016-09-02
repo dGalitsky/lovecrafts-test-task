@@ -1,0 +1,27 @@
+{
+  "name": "lovecrafts-test-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "grunt": "^0.4.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dGalitsky/lovecrafts-test-task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dGalitsky/lovecrafts-test-task/issues"
+  },
+  "homepage": "https://github.com/dGalitsky/lovecrafts-test-task#readme"
+}

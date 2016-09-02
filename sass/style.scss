@@ -1,0 +1,57 @@
+body {
+	background-color: #eeeeee;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #5f6062;
+
+	header {
+		height: 132px;
+
+		img {
+			float: left;
+			height: 56px;
+			margin-top: 32px;
+
+			&.logo-desktop {
+				display: none;
+			}
+		}
+	}
+
+	h1 {
+		display: inline-block;
+		font-size: 32px;
+		line-height: 132px;
+		font-weight: bold;
+	}
+	
+	.main {
+		background: #ffffff;
+		padding: 36px 20px;
+
+		label, input[type=text] {
+			display: block;
+			clear: both;
+		}
+
+		input {
+			width: 255px;
+			margin: 5px 0px 15px 0px;
+		}
+
+		.loading {
+			display: none;
+		}
+	}
+}
+
+@media screen and(min-width: 767px) {
+	img {
+		&.logo-mobile {
+			display: none;
+		}
+
+		&.logo-desktop {
+			display: block !important;
+		} 
+	}
+}

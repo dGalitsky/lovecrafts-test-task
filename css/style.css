@@ -1,0 +1,36 @@
+body {
+  background-color: #eeeeee;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #5f6062; }
+  body header {
+    height: 132px; }
+    body header img {
+      float: left;
+      height: 56px;
+      margin-top: 32px; }
+      body header img.logo-desktop {
+        display: none; }
+  body h1 {
+    display: inline-block;
+    font-size: 32px;
+    line-height: 132px;
+    font-weight: bold; }
+  body .main {
+    background: #ffffff;
+    padding: 36px 20px; }
+    body .main label, body .main input[type=text] {
+      display: block;
+      clear: both; }
+    body .main input {
+      width: 255px;
+      margin: 5px 0px 15px 0px; }
+    body .main .loading {
+      display: none; }
+
+@media screen and (min-width: 767px) {
+  img.logo-mobile {
+    display: none; }
+  img.logo-desktop {
+    display: block !important; } }
+
+/*# sourceMappingURL=style.css.map */
