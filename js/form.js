@@ -2,6 +2,15 @@ $(document).ready(function(){
 	var emailRegEx = /^(\S+)@([a-z0-9-]+)(\.)([a-z]{2,4})(\.?)([a-z]{0,4})+$/;
 	var bDayRegEx = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
 
+	// Birthday input assistance
+	$('#bday').on('keyup', function(e){
+		var val = $(this).val();
+		if ((val.length == 2 || val.length == 5) && e.which != 8) {
+			$(this).val(val + '/');
+		}
+	});
+
+	// Form input validation
 	$('#registration').find('input').on('change', function(){
 		var emailString = $('#email').val();
 		var bDayString = $('#bday').val();
@@ -11,7 +20,7 @@ $(document).ready(function(){
 		var disabled = !(emailString && bDayString && passString && pass2String);
 
 		// Email input validation
-		// Not using <input type="email"> to preserve consistency in look
+		// Not using <input type="email"> to preserve consistency in look in case of error
 		if (!emailString.match(emailRegEx) && emailString != '') {
 			$('#email').addClass('error');
 			$('.email-error').show();
@@ -22,7 +31,7 @@ $(document).ready(function(){
 		}
 
 		// Birthday input verification
-		if (!bDayString.match(bDayRegEx) && bDayString != 'dd/mm/yyyy') {
+		if (!bDayString.match(bDayRegEx) && bDayString != '') {
 			$('#bday').addClass('error');
 			$('.date-error').show();
 			disabled = true;
@@ -56,4 +65,23 @@ $(document).ready(function(){
 		}
 		$('#submit').prop( "disabled", disabled );
 	});
-})
+
+	//Submitting form via AJAX
+	$('#registration').on('submit', function(e){
+		e.preventDefault();
+		$.ajax({
+			method: "POST",
+			url: "php/form.php",
+			data: { email: $('#email').val()}
+		})
+		.done(function( msg ) {
+			alert(msg);
+			$('#registration').find('input[type=text], input[type=password]').each(function(){
+				$(this).val('');
+			});
+  		})
+  		.fail(function(err) {
+  			alert(err);
+  		});
+	});
+});
