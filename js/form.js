@@ -23,17 +23,17 @@ $(document).ready(function(){
 		// Not using <input type="email"> to preserve consistency in look in case of error
 		if (!emailString.match(emailRegEx) && emailString != '') {
 			$('#email').addClass('error');
-			$('.email-error').show();
+			$('.email-error').css('display', 'block');
 			disabled = true;
 		} else {
 			$('#email').removeClass('error');
-			$('.email-error').hide();
+			$('.email-error').css('display', 'none');
 		}
 
 		// Birthday input verification
 		if (!bDayString.match(bDayRegEx) && bDayString != '') {
 			$('#bday').addClass('error');
-			$('.date-error').show();
+			$('.date-error').css('display', 'block');
 			disabled = true;
 
 		} else {
@@ -46,22 +46,22 @@ $(document).ready(function(){
 
 			if (bDayDate > todayDate) {
 				$('#bday').addClass('error');
-				$('.date-error-2').show();
+				$('.date-error-2').css('display', 'block');
 				disabled = true;
 			} else {
 				$('#bday').removeClass('error');
-				$('.date-error').hide();
+				$('.date-error').css('display', 'none');
 			}
 		}
 
 		// Passwords match verification
 		if (!(passString == pass2String) && passString && pass2String) {
 			$('#pass, #pass2').addClass('error');
-			$('.pass-error').show();
+			$('.pass-error').css('display', 'block');
 			disabled = true;
 		} else {
 			$('#pass, #pass2').removeClass('error');
-			$('.pass-error').hide();
+			$('.pass-error').css('display', 'none');
 		}
 		$('#submit').prop( "disabled", disabled );
 	});
@@ -69,6 +69,7 @@ $(document).ready(function(){
 	//Submitting form via AJAX
 	$('#registration').on('submit', function(e){
 		e.preventDefault();
+		$('.loading').addClass('visible');
 		$.ajax({
 			method: "POST",
 			url: "php/form.php",
@@ -79,6 +80,8 @@ $(document).ready(function(){
 			$('#registration').find('input[type=text], input[type=password]').each(function(){
 				$(this).val('');
 			});
+			$('#submit').prop('disabled', 'true');
+			$('.loading').removeClass('visible');
   		})
   		.fail(function(err) {
   			alert(err);

@@ -9,39 +9,35 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<header>
-	<img src="assets/logo-loveknitting-sm.svg" class="logo-mobile">
-	<img src="assets/logo-loveknitting.svg" class="logo-desktop">
-	<h1>Registration Excercise</h1>
-</header>
-<section class="main">
-	<form id="registration" action="/php/form.php" method="post">
-		<label for="email">
-			Email
-			<span class="error email-error">Please enter a correct email.</span>
-			<input type="email" id="email" name="email" placeholder="example@example.com">
-		</label>
-		
-		<label for="bday">
-			Birthday
+<div class="wrapper">
+	<header>
+		<img src="assets/logo-loveknitting-sm.svg" alt="Love Knitting" class="logo-mobile">
+		<img src="assets/logo-loveknitting.svg" alt="Love Knitting" class="logo-desktop">
+		<h1>Registration Excercise</h1>
+	</header>
+	<section class="main">
+		<form id="registration" action="/php/form.php" method="post">
+			<label for="email">Email</label>
+			<input type="text" id="email" name="email" placeholder="example@example.com">
+			<span class="error email-error">Please enter a correct email.</span>			
+			
+			<label for="bday">Birthday</label>
+			<input type="text" id="bday" name="bday" maxlength="10" placeholder="dd/mm/yyyy">
 			<span class="error date-error">Please enter your date as dd/mm/yyyy.</span>
 			<span class="error date-error-2">Birthday must be before today's date.</span>
-			<input type="text" id="bday" name="bday" maxlength="10" placeholder="dd/mm/yyyy">
-		</label>
 		
-		<label for="pass">
-			Password
-			<span class="error pass-error">Passwords must match.</span>
+			
+			<label for="pass">Password</label>			
 			<input type="password" id="pass" name="pass">
-		</label>
-		<label for="pass2">
-			Confirm password
-			<input type="password" id="pass2" name="pass2">
-		</label>
 
-		<input type="submit" id="submit" value="register" disabled>
-		<div class="loading"><img src="assets/spinner.svg"></div>
-	</form>
-</section>
+			<label for="pass2">Confirm password</label>
+			<input type="password" id="pass2" name="pass2">
+			<span class="error pass-error">Passwords must match.</span>
+	
+			<input type="submit" id="submit" alt="loading..." value="Register" disabled>
+			<div class="loading"><img src="assets/spinner.svg"></div>
+		</form>
+	</section>
+</div>
 </body>
 </html>
