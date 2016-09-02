@@ -85,6 +85,6 @@ body {
     .wrapper img.logo-mobile {
       display: none; }
     .wrapper img.logo-desktop {
-      display: block !important; } }
+      display: block; } }
 
 /*# sourceMappingURL=style.css.map */
