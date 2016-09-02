@@ -2,6 +2,7 @@ body {
 	background-color: #eeeeee;
 	font-family: Helvetica, Arial, sans-serif;
 	color: #5f6062;
+	min-width: 320px;
 
 	header {
 		height: 132px;
@@ -19,7 +20,8 @@ body {
 
 	h1 {
 		display: inline-block;
-		font-size: 32px;
+		margin-left: 10px;
+		font-size: 24px;
 		line-height: 132px;
 		font-weight: bold;
 	}
@@ -28,16 +30,30 @@ body {
 		background: #ffffff;
 		padding: 36px 20px;
 
-		label, input[type=text] {
+		label, input {
 			display: block;
 			clear: both;
 		}
 
 		input {
 			width: 255px;
+			height: 30px;
+			border: 1px solid #cccccc;
 			margin: 5px 0px 15px 0px;
+			font-size: 16px;
+
+			&.error {
+				border: 1px solid #ff0000;
+			}
 		}
 
+		span.error {
+			color: #ff0000;
+			display: none;
+			font-size: 12px;
+			margin-top: -15px;
+		}
+			
 		.loading {
 			display: none;
 		}
@@ -45,6 +61,11 @@ body {
 }
 
 @media screen and(min-width: 767px) {
+
+	h1 {
+		font-size: 32px;
+	}
+
 	img {
 		&.logo-mobile {
 			display: none;

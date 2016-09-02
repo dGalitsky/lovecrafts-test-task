@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-
+  require('load-grunt-tasks')(grunt); 
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -36,6 +36,15 @@ module.exports = function(grunt) {
           livereload: true,
         },
       },
+    },
+    php: {
+        dist: {
+            options: {
+                port: 5000,
+                keepalive: true,
+                open: true
+            }
+        }
     }
   });
 
@@ -47,5 +56,6 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('start', ['php']);
 
 };

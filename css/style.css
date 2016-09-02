@@ -1,7 +1,8 @@
 body {
   background-color: #eeeeee;
   font-family: Helvetica, Arial, sans-serif;
-  color: #5f6062; }
+  color: #5f6062;
+  min-width: 320px; }
   body header {
     height: 132px; }
     body header img {
@@ -12,22 +13,36 @@ body {
         display: none; }
   body h1 {
     display: inline-block;
-    font-size: 32px;
+    margin-left: 10px;
+    font-size: 24px;
     line-height: 132px;
     font-weight: bold; }
   body .main {
     background: #ffffff;
     padding: 36px 20px; }
-    body .main label, body .main input[type=text] {
+    body .main label, body .main input {
       display: block;
       clear: both; }
     body .main input {
       width: 255px;
-      margin: 5px 0px 15px 0px; }
+      height: 30px;
+      border: 1px solid #cccccc;
+      margin: 5px 0px 15px 0px;
+      font-size: 16px; }
+      body .main input.error {
+        border: 1px solid #ff0000; }
+    body .main span.error {
+      color: #ff0000;
+      display: none;
+      font-size: 12px;
+      margin-top: -15px; }
     body .main .loading {
       display: none; }
 
 @media screen and (min-width: 767px) {
+  h1 {
+    font-size: 32px; }
+
   img.logo-mobile {
     display: none; }
   img.logo-desktop {
